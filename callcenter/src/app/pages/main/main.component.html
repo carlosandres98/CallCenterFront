@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3>Evaluar historial de chats</h3>
+            <button type="button" class="btn btn-primary" (click)="goEvaluation()">Enviar evaluación</button>
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Revisado</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Puntos</th>
+                            <th scope="col">Estrellas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let tl of tableList">
+                            <th scope="row">{{tl.check}}</th>
+                            <td>{{tl.title}}</td>
+                            <td>{{tl.points}}</td>
+                            <td> 
+                                <div>
+                                    <app-stars [total]="tl.stars"></app-stars>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
